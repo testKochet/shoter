@@ -8,7 +8,8 @@ font = font.Font(None, 36)
 # нам нужны такие картинки:
 img_win = "thumb.jpg" # фон победы
 img_los = "game-over.png" # фон проигрыша
-img_back = "galaxy.jpg" # фон игры
+img_back1 = "galaxy.jpg" # фон игры
+img_back2 = "галактика.jpg"
 
 img_bullet = "bullet.png" # пуля
 img_hero = "rocket.png" # герой
@@ -72,6 +73,15 @@ class Bullet(GameSprite):
        # исчезает, если дойдет до края экрана
        if self.rect.y < 0:
            self.kill()
+
+
+back_numb = randint(1,2)
+
+if back_numb ==1 :
+    img_back = img_back1
+else:
+    img_back = img_back2
+
 
 # Создаем окошко
 win_width = 700
