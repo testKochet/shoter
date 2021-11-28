@@ -13,6 +13,7 @@ img_back = "galaxy.jpg" # фон игры
 img_bullet = "bullet.png" # пуля
 img_hero = "rocket.png" # герой
 img_enemy = "ufo.png" # враг
+img_enemy2 = "ufo_2.png" # враг 2
 
 score = 0 # сбито кораблей
 goal = 10 # столько кораблей нужно сбить для победы
