@@ -151,10 +151,15 @@ while run:
        # проверка столкновения пули и монстров (и монстр, и пуля при касании исчезают)
        collides = sprite.groupcollide(monsters, bullets, True, True)
        for c in collides:
-           # этот цикл повторится столько раз, сколько монстров подбито
-           score = score + 1
-           monster = Enemy(img_enemy, randint(80, win_width - 80), -40, 80, 50, randint(1, 5))
-           monsters.add(monster)
+            # этот цикл повторится столько раз, сколько монстров подбито
+            score = score + 1
+            number = random.randint(1, 2)
+            if number == 1:
+                monster = Enemy(img_enemy, randint(80, win_width - 80), -40, 80, 50, randint(1, 5))
+                monsters.add(monster)
+            else:
+                monster = Enemy(img_enemy2, randint(80, win_width - 80), -40, 80, 50, randint(1, 5))
+                monsters.add(monster)
 
        # возможный проигрыш: пропустили слишком много или герой столкнулся с врагом
        if sprite.spritecollide(ship, monsters, False) or lost >= max_lost:
