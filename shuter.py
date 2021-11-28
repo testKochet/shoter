@@ -1,5 +1,6 @@
 from pygame import *
 from random import randint
+import random
 # подгружаем отдельно функции для работы со шрифтом
 font.init()
 # во время игры пишем надписи размера 36
@@ -14,6 +15,7 @@ img_back2 = "галактика.jpg"
 img_bullet = "bullet.png" # пуля
 img_hero = "rocket.png" # герой
 img_enemy = "ufo.png" # враг
+img_enemy2 = "ufo_2.png" # враг 2
 
 score = 0 # сбито кораблей
 goal = 10 # столько кораблей нужно сбить для победы
@@ -96,8 +98,14 @@ ship = Player(img_hero, 5, win_height - 100, 80, 100, 10)
 # создание группы спрайтов-врагов
 monsters = sprite.Group()
 for i in range(1, 6):
-   monster = Enemy(img_enemy, randint(80, win_width - 80), -40, 80, 50, randint(1, 5))
-   monsters.add(monster)
+    number = random.randint(1, 2)
+    if number == 1:
+        monster = Enemy(img_enemy, randint(80, win_width - 80), -40, 80, 50, randint(1, 5))
+        monsters.add(monster)
+    else:
+        monster = Enemy(img_enemy2, randint(80, win_width - 80), -40, 80, 50, randint(1, 5))
+        monsters.add(monster)
+
 
 bullets = sprite.Group()
 
